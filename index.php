@@ -8,6 +8,7 @@ if ((isset($_SESSION['persona'])) && (isset($_SESSION['id']))) {
 	$usuario = $_SESSION['persona'];
 	$dir = 'formularios/perfil.php';
 	 print 'sesion exitosa';
+         print $idusuario;
 }else{
 	print 'No se ha identificado';
 	$usuario = 'Acceder Registrarse';
@@ -22,5 +23,6 @@ $PantallaCliente->barraMenu();
 $PantallaCliente->slide();
 $PantallaCliente->presentacion();
 $PantallaCliente->footer();
+
 ?>
 </html>

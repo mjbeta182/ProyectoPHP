@@ -16,7 +16,7 @@ function mostrarDatos($bdConexion,$idusuario)
 	u.email 
 	FROM tblpersona p 
 	INNER JOIN tblusuario u 
-	ON p.idPersona = u.idPersona AND u.idUsuario = $idusuario";
+	ON p.idPersona = u.idPersona AND u.idPersona = $idusuario";
 					
 	$rsMostrar = $bdConexion->ejecutarSql($sqlMostrar);
 	
