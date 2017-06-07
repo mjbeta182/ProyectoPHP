@@ -160,10 +160,10 @@
 			<p>
 				Library es un nuevo portal en Internet que da acceso a todo un universo literario.
 
-				El catálogo de libros de organiza por temáticas o categorias donde encontraras una gran cantidad de libros a tu disposicion.<br>
-				Direccion<br>
-				Telefono<br>
-				email
+				El catálogo de libros de organiza por temáticas o categorias donde encontraras una gran cantidad de libros a tu disposicion.<br><br>
+				Direccion: Alameda Franklin Delano Roosevelt, San Salvador.<br>
+				Telefono: 7244-0887.<br>
+				email: library@gmail.com
 			</p>
 		</div>
 		<div class="col-md-4">
@@ -171,22 +171,15 @@
 				<strong>UBICACION</strong>
 			</h4>
 			<hr>
-			<script>
-		      function initMap() {
-		        var uluru = {lat: 13.7263661, lng: -89.1816245};
-		        var map = new google.maps.Map(document.getElementById("map"), {
-		          zoom: 4,
-		          center: uluru
-		        });
-		        var marker = new google.maps.Marker({
-		          position: uluru,
-		          map: map
-		        });
-		      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAQG1tG7LCCbXKdImmYahzv-ieQL3Wlft8 &callback=initMap">
-    </script>
+			<!--Codigo para agregar la API de google maps-->
+			
+			<iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.28259846828!2d-89.22662258573826!3d13.701326590380122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6330410eacae2d%3A0xf3bd10411c7f3afb!2sMonumento+al+Divino+Salvador+del+Mundo!5e0!3m2!1ses!2ssv!4v1496853147833" 
+                        width="400" height="450" frameborder="0" style="border:0" allowfullscreen>
+                        </iframe>
+
+                        <script src="http://code.jquery.com/jquery-latest.js"></script>
+		    <!--Fin de codigo para el mapa de Google maps-->
 
 		</div>
 		<div class="col-md-4">
@@ -199,7 +192,7 @@
 					<label for="exampleInputEmail1">
 						Nombre
 					</label>
-					<input type="email" class="form-control" id="exampleInputEmail1">
+					<input type="text" class="form-control" id="exampleInputEmail1">
 					</div>
 				<div class="form-group">
 					<label for="exampleInputEmail1">
