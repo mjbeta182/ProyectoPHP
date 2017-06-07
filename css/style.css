@@ -12,7 +12,7 @@ html,body{
 .breadcrumb,.navbar-default{margin: 0px;z-index: 10; opacity: 0.8;}
 .breadcrumb{background-color: white;}
 .breadcrumb a{list-style: none; color:#1C1C1C;}
-.navbar-default{background-color:#1C1C1C;border-style: none;}
+.navbar-default{background-color:#1C1C1C;border-style: none;z-index:15;}
 .slide{margin-top: -50px;}
 /******CATALOGO DE LIBROS*******/
 .row3{text-align: center;}

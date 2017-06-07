@@ -53,38 +53,39 @@ $PantallaCliente->barraMenu();
         <div role="tabpanel" class="tab-pane" id="register">
           <h3>Crear una cuenta nueva</h3>
           <hr>
-          <form role="form">
+          <form role="form" action="#" method="GET">
             <label class="sr-only" for="user">Nombre</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control" id="user" placeholder="Nombre Completo" data-original-title="" title="">
+              <input type="text" class="form-control" id="txtNombre" placeholder="Nombre Completo" name="txtNombre" value="<?=$txtNombre?>">
+               <input type="hidden" class="form-control" id="hCodigo" name="hCodigo" placeholder="Codigo" readonly="" value="<?=$hCodigo?>">
             </div>
             <br>
             <label class="sr-only" for="user">Direccion</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-map-pin"></i></span>
-              <input type="text" class="form-control" id="user" placeholder="Direccion" data-original-title="" title="">
+              <input type="text" class="form-control" id="txtDireccion" name="txtDireccion" placeholder="Direccion" value="<?=$txtDireccion?>">
             </div>
             <br>
             <label class="sr-only" for="user">Telefono</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-              <input type="text" class="form-control" id="user" placeholder="Telefono" data-original-title="" title="">
+              <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Telefono"  value="<?=$txtTelefono?>" >
             </div>
             <br>
             <label class="sr-only" for="email">Email</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-              <input type="email" class="form-control" id="email" placeholder="Email" data-original-title="" title="">
+              <input type="email" class="form-control" id="txtCorreo" name="txtCorreo" placeholder="Email" value="<?=$txtCorreo?>">
             </div>
             <br>
             <label class="sr-only" for="inputPassword">Contraseña</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input type="password" class="form-control" id="password" placeholder="Contraseña">
+              <input type="password" class="form-control" id="txtContrasena" name="txtContrasena" placeholder="Contraseña" value="<?=$txtContrasena?>">
             </div>
             <br>
-            <button type="submit" class="btn btn-warning">Registrarse</button>
+            <button type="submit" class="btn btn-warning" name="btnRegistrarse">Registrarse</button>
           </form>
         </div>
       </div>
