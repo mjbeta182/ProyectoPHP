@@ -14,7 +14,6 @@ if (isset($_REQUEST['btnGuardar']))
 		$campos		= "nombreUsuario";
 		$valores	= "'$txtTipo'";
 		$bdConexion->insertarDB($tabla,$campos,$valores);
-
 		}
 		if ( $_REQUEST['accion']== 'update')
 		{
