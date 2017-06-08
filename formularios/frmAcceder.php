@@ -1,5 +1,6 @@
 <!DOCTYPE>
-<html lang="en">
+<html lang="es">
+    <meta charset="UTF-8">
 <?php
 //Archivo que tiene la pantalla y estilo por parte del cliente
 include('../plantilla/plantillaCliente.php');

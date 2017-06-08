@@ -4,7 +4,7 @@ include("../clases/conexion.php");
 
 date_default_timezone_set("America/El_Salvador");
 
-$hCodigo	=	$_REQUEST['hCodigo'];
+$hCodigo	=	(isset($_REQUEST['hCodigo'])?$_REQUEST['hCodigo']:null);
 
 $sql = "select tblpersona.idPersona,tblpersona.nombre,tblpersona.direccion,tbltipousuario.nombreUsuario,tblusuario.email from tblpersona 
 inner join tblusuario on tblpersona.idPersona = tblusuario.idPersona 
