@@ -13,14 +13,15 @@ inner join tbltipousuario on tbltipousuario.idTipoUsuario = tblusuario.idTipoUsu
 	$rsDetalles = $bdConexion->ejecutarSQL($sql);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <link rel="stylesheet" type="text/css" href="../css/styleReport.css"/>
 	<title>Reporte de Empleados</title>
 </head>
 <body onload="window.print();">
 	<table border="0" align="center" style="margin-top:10px; width:500px;">
-	<tr>
+        <tr style="background-color: white;">
 		<td>
 			<div>
 				<img src="../imagenes/1.jpg" height="8%" width="200">
@@ -35,8 +36,11 @@ inner join tbltipousuario on tbltipousuario.idTipoUsuario = tblusuario.idTipoUsu
 	</tr>
 	<tr>
 		<td colspan="2">
-			<div style="float: right;">
-				<p align="right">Generando:<?=date("d/m/y g:i a")?></p>
+			<div style="float: left;">
+                            Generado:<?=date("d/M/Y")?><br>
+			</div>
+                         <div style="float: right;">
+                                <?php $time = time(); echo date("g:i a", $time)?>
 			</div>
 			<table border="1" cellpadding="0" cellspacing="0" width="100%">
 				<tr>
