@@ -29,13 +29,15 @@ $PantallaCliente->barraMenu();
           <h3 class=" text-center text-muted" id="heading">
         <strong> EDITORIAL</strong>
       </h3>
-          <form role="form" class="formulario" action="#" method="post">
-           <div class="input-group" id="busqueda">
-              <input type="text" class="form-control" id="txtBuscar" name="txtBuscar" placeholder="Buscar">
+          <form>
+          <div class="input-group" id="busqueda">
+                  <input type="text" class="form-control" id="txtBuscar" name="txtBuscar" placeholder="Buscar" value="<?=$txtBuscar?>">
                <span class="input-group-addon" id="spanSearch">
                <button type="submit" class="fa fa-search"></button>
                </span>
             </div>
+          </form>
+          <form role="form" class="formulario" action="#" method="post">
           <label class="sr-only" for="user">Codigo</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="  fa fa-lock"></i></span>
@@ -76,7 +78,7 @@ $PantallaCliente->barraMenu();
         </div><!--fin de col-md-4-->
         <div class="col-md-8">  
             <table border="1" class="tabla">
-              <?php mostrarDatos($bdConexion,$hCodigo,$txtNombreEditorial,$txtDireccion,$txtTelefono,$txtEmail); ?>
+              <?php mostrarDatos($bdConexion,$hCodigo,$txtNombreEditorial,$txtDireccion,$txtTelefono,$txtEmail,$txtBuscar); ?>
             </table>
       </div>
     </div><!--fin de row-->

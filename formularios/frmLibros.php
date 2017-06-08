@@ -30,13 +30,15 @@ $PantallaCliente->barraMenu();
           <h3 class=" text-center text-muted" id="heading">
         <strong>LIBROS</strong>
       </h3>
-          <form role="form" class="formulario" action="#" method="post" enctype="multipart/form-data">
-           <div class="input-group" id="busqueda">
-              <input type="text" class="form-control" id="txtBuscar" name="txtBuscar" placeholder="Buscar">
+          <form>
+              <div class="input-group" id="busqueda">
+                  <input type="text" class="form-control" id="txtBuscar" name="txtBuscar" placeholder="Buscar" value="<?=$txtBuscar?>">
                <span class="input-group-addon" id="spanSearch">
-               <button type="submit" class="fa fa-search" style="height:32px;"></button>
+               <button type="submit" class="fa fa-search"></button>
                </span>
             </div>
+          </form>
+          <form role="form" class="formulario" action="#" method="post" enctype="multipart/form-data">
           <label class="sr-only" for="user">Codigo</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="  fa fa-lock"></i></span>
@@ -122,7 +124,7 @@ $PantallaCliente->barraMenu();
         </div><!--fin de col-md-4-->
                 <div class="col-md-8">  
             <table border="1" class="tabla" style="font-size:12px;">
-              <?php mostrarDatos($bdConexion,$hCodigo,$txtTitulo ,$txtStock,$txtDescripcion,$txtPalabras,$txtCosto,$archivo,$slcEditorial,$slcCategoria); ?>
+              <?php mostrarDatos($bdConexion,$hCodigo,$txtTitulo ,$txtStock,$txtDescripcion,$txtPalabras,$txtCosto,$archivo,$slcEditorial,$slcCategoria,$txtBuscar); ?>
             </table>
       </div>
     </div><!--fin de row-->
