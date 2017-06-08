@@ -94,3 +94,9 @@ function LimpiarEmpleado()
    email		=	$('#txtEmail').val(null);
    contrasena	=	$('#txtContrasena').val(null);
 }
+//***************************************************************************************************
+function frmImprimir()
+{
+    var id	=	$('#hCodigo').val();
+	window.open('../reportes/rptEmpleados.php?hCodigo='+id,'Vista');
+}
