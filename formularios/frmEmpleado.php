@@ -47,9 +47,8 @@ $PantallaCliente->barraMenu();
               <input type="text" class="form-control" id="txtDireccion" name="txtDireccion" placeholder="Direccion" value="<?=$txtDireccion?>" required="true">
             </div>
             <br>
-             <br>
             <label class="sr-only" for="user">Tipo de Usuario</label>
-            <div class="input-group">
+            <div class="input-group"><span class="input-group-addon"><i class="fa fa-male"></i></span>
               <?php
                 $bdConexion->llenarSelect("slcTipoUsuario","SELECT idTipoUsuario,nombreUsuario FROM tbltipousuario WHERE idTipoUsuario != 3 ",$slcTipoUsuario);
               ?>
@@ -57,13 +56,13 @@ $PantallaCliente->barraMenu();
             <br>
              <label class="sr-only" for="user">Email</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
               <input type="text" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email" value="<?=$txtEmail?>" required="true">
             </div>
             <br>
                         <label class="sr-only" for="user">Contraseña</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
               <input type="text" class="form-control" id="txtContrasena" name="txtContrasena" placeholder="Contraseña" value="<?=$txtContrasena?>" required="true">
             </div>
             <br>

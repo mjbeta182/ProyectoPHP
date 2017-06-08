@@ -63,7 +63,7 @@ $PantallaCliente->barraMenu();
             <br>
             <label class="sr-only" for="user">Direccion</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-map-pin"></i></span>
+              <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
               <input type="text" class="form-control" id="txtDireccion" name="txtDireccion" placeholder="Direccion" value="<?=$txtDireccion?>">
             </div>
             <br>

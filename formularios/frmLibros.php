@@ -44,7 +44,7 @@ $PantallaCliente->barraMenu();
             <br>
             <label class="sr-only" for="user">Titulo</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="  fa fa-user-circle"></i></span>
+              <span class="input-group-addon"><i class="  fa fa-edit"></i></span>
               <input type="text" class="form-control" id="txtTitulo" name="txtTitulo" placeholder="Titulo" value="<?=$txtTitulo?>" required="true">
             </div>
             <br>
@@ -67,19 +67,19 @@ $PantallaCliente->barraMenu();
             <br>
             <label class="sr-only" for="user">Stock</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+              <span class="input-group-addon"><i class="fa fa-area-chart"></i></span>
               <input type="text" class="form-control" id="txtStock" name="txtStock" placeholder="Stock" value="<?=$txtStock?>" required="true">
             </div>
             <br>
             <label class="sr-only" for="user">Descripcion</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+              <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
               <input type="text" class="form-control" id="txtDescripcion" name="txtDescripcion" placeholder="Descripcion" value="<?=$txtDescripcion?>" required="true">
             </div>
             <br>
              <br>
             <label class="sr-only" for="user">Editorial</label>
-            <div class="input-group">
+            <div class="input-group"><span class="input-group-addon"><i class="fa fa-book"></i></span>
               <?php
                 $bdConexion->llenarSelect("slcEditorial","SELECT * FROM tbleditorial ",$slcEditorial);
               ?>
@@ -87,12 +87,12 @@ $PantallaCliente->barraMenu();
             <br>
             <label class="sr-only" for="user">Precio Costo</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+              <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
               <input type="text" class="form-control" id="txtCosto" name="txtCosto" placeholder="Precio" value="<?=$txtCosto?>" required="true">
             </div>
             <br>
             <label class="sr-only" for="user">Categoria</label>
-            <div class="input-group">
+            <div class="input-group"><span class="input-group-addon"><i class="fa fa-address-book"></i></span>
               <?php
                 $bdConexion->llenarSelect("slcCategoria","SELECT * FROM tblcategoria",$slcCategoria);
               ?>
@@ -100,14 +100,14 @@ $PantallaCliente->barraMenu();
             <br>
              <label class="sr-only" for="user">Palabras Clave</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-key"></i></span>
               <input type="text" class="form-control" id="txtPalabras" name="txtPalabras" placeholder="Palabras clave" value="<?=$txtPalabras?>" required="true">
             </div>
             <br>
             <!--############# SUBIR ARCHIVO ##############--> 
             <label class="sr-only" for="user">Imagen</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+              <span class="input-group-addon"><i class="fa fa-image"></i></span>
               <input type="file" class="form-control"  id="archivo" name="archivo" value="Examinar">
             </div>
             <br>
