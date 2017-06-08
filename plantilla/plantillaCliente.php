@@ -32,6 +32,7 @@
 		  </head>
  		';
  	}
+        //Agregar formulario Libro y mandar como parametro el value nombre de categoria 
  	function barraMenu(){
  		print '
 			<!--////////////BARRA DE MENU////////////-->
@@ -63,11 +64,25 @@
 							</div>
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav">
-									<li >
-										<a href="#">Categorias</a>
-									</li>
-									<li>
-										<a href="#">Busqueda Avanzada</a>
+									<li class="dropdown">
+										 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorias<strong class="caret"></strong></a>
+										<ul class="dropdown-menu">
+                                                                                        <li><a href="'.$this->puntos.'formularios/libros.php?idCat=1">Tecnologia</a></li>
+                                                                                        <li><a href="'.$this->puntos.'formularios/libros.php?idCat=2">Drama</a></li>
+                                                                                         <li><a href="'.$this->puntos.'formularios/libros.php?idCat=3">Lirica</a></li>
+                                                                                         <li><a href="'.$this->puntos.'formularios/libros.php?idCat=4">Salud</a></li>
+                                                                                         <li><a href="'.$this->puntos.'formularios/libros.php?idCat=5">Ciencia</a></li>
+                                                                                         <li><a href="'.$this->puntos.'formularios/libros.php?idCat=6">Thriller</a></li>
+                                                                                        <li><a href="'.$this->puntos.'formularios/libros.php?idCat=7">Romance</a></li>
+											<li><a href="'.$this->puntos.'formularios/libros.php?idCat=8">Aventura</a></li>                                                                          
+											<li><a href="'.$this->puntos.'formularios/libros.php?idCat=9">Terror</a></li>
+											<li><a href="'.$this->puntos.'formularios/libros.php?idCat=10">Ciencia Ficcion</a></li>
+                                                                                        <li><a href="'.$this->puntos.'formularios/libros.php?idCat=11">Investigacion</a></li>
+											<li><a href="'.$this->puntos.'formularios/libros.php?idCat=12">Infantil</a></li>
+											<li><a href="'.$this->puntos.'formularios/libros.php?idCat=13">Autoayuda</a></li>
+                                                                                        <li><a href="'.$this->puntos.'formularios/libros.php?idCat=14">Cocina</a></li>
+											<li><a href="'.$this->puntos.'formularios/libros.php?idCat=15">Deportes</a></li>
+										</ul>
 									</li>
 									<li>
 										<a href="#">Recomendados</a>
@@ -156,13 +171,13 @@
 				<strong>SOBRE NOSOTROS</strong>
 			</h4>
 			<hr>
-			<p>
-				Library es un nuevo portal en Internet que da acceso a todo un universo literario.
-
-				El catálogo de libros de organiza por temáticas o categorias donde encontraras una gran cantidad de libros a tu disposicion.<br><br>
-				Direccion: Alameda Franklin Delano Roosevelt, San Salvador.<br>
-				Telefono: 7244-0887.<br>
-				email: library@gmail.com
+			<p >
+				Library es un nuevo portal en Internet que da acceso a todo un 
+                                universo literario.<br>
+                                El catálogo de libros de organiza por temáticas o categorias donde encontraras una gran cantidad de libros a tu disposicion.<br><br>
+				<strong>Direccion:</strong><br> Alameda Franklin Delano Roosevelt, San Salvador.<br>
+				<strong>Telefono:</strong><br> 7244-0887.<br>
+				<strong>email:</strong><br> library@gmail.com
 			</p>
 		</div>
 		<div class="col-md-4">
@@ -174,7 +189,7 @@
 			
 			<iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.28259846828!2d-89.22662258573826!3d13.701326590380122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6330410eacae2d%3A0xf3bd10411c7f3afb!2sMonumento+al+Divino+Salvador+del+Mundo!5e0!3m2!1ses!2ssv!4v1496853147833" 
-                        width="400" height="450" frameborder="0" style="border:0" allowfullscreen>
+                        width="400" height="300" frameborder="0" style="border:0" allowfullscreen>
                         </iframe>
 
                         <script src="http://code.jquery.com/jquery-latest.js"></script>

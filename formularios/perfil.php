@@ -38,7 +38,6 @@ $PantallaCliente->barraMenu();
         <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">Datos Personales</a></li>
         <li role="presentation"><a href="#register" aria-controls="register" role="tab" data-toggle="tab">Prestamos</a></li>
       </ul>
-
       <!-- Tab panes -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="login">
@@ -49,58 +48,15 @@ $PantallaCliente->barraMenu();
               <?php mostrarDatos($bdConexion,$idusuario); ?>
             </table>
            </div>
-           <!--  <label class="sr-only" for="user">Email</label>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-              <input type="text" class="form-control" id="txtEmail" name="txtEmail" value="<?=$txtEmail?>" placeholder="Email">
-              <input type="hidden" id="cod" name="cod" value="<?=$cod?>" >
-            </div>
-            <br>
-            <label class="sr-only" for="inputPassword">Contraseña</label>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input type="password" class="form-control" id="txtClave" name="txtClave" placeholder="Contraseña" value="<?=$txtClave?>">
-            </div>
-            <button type="submit" class="btn btn-warning" name="btnIngresar" id="btnIngresar" >Ingresar</button> -->
-          </form>
         </div>
-        <!---->
         <div role="tabpanel" class="tab-pane" id="register">
           <h3>PRESTAMOS</h3>
           <hr>
-          <form role="form">
-            <label class="sr-only" for="user">Nombre</label>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control" id="user" placeholder="Nombre Completo" data-original-title="" title="">
-            </div>
-            <br>
-            <label class="sr-only" for="user">Direccion</label>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-map-pin"></i></span>
-              <input type="text" class="form-control" id="user" placeholder="Direccion" data-original-title="" title="">
-            </div>
-            <br>
-            <label class="sr-only" for="user">Telefono</label>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-              <input type="text" class="form-control" id="user" placeholder="Telefono" data-original-title="" title="">
-            </div>
-            <br>
-            <label class="sr-only" for="email">Email</label>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-              <input type="email" class="form-control" id="email" placeholder="Email" data-original-title="" title="">
-            </div>
-            <br>
-            <label class="sr-only" for="inputPassword">Contraseña</label>
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input type="password" class="form-control" id="password" placeholder="Contraseña">
-            </div>
-            <br>
-            <button type="submit" class="btn btn-warning">Registrarse</button>
-          </form>
+          <div class="col-md-12">  
+            <table border="1" class="tabla" style="width:100%;">
+              <?php mostrarPrestamos($bdConexion,$idusuario); ?>
+            </table>
+           </div>
         </div>
       </div>
     </div>
