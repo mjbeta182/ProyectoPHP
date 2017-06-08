@@ -84,9 +84,7 @@
 											<li><a href="'.$this->puntos.'formularios/libros.php?idCat=15">Deportes</a></li>
 										</ul>
 									</li>
-									<li>
-										<a href="#">Recomendados</a>
-									</li>
+	
 									<li>
 										<a href="#">Contactanos</a>
 									</li>

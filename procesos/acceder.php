@@ -15,6 +15,7 @@ $txtDireccion	= (isset($_REQUEST['txtDireccion'])?$_REQUEST['txtDireccion']:null
 $txtTelefono	= (isset($_REQUEST['txtTelefono'])?$_REQUEST['txtTelefono']:null);
 $txtCorreo 	= (isset($_REQUEST['txtCorreo'])?$_REQUEST['txtCorreo']:null);
 $txtContrasena 	= (isset($_REQUEST['txtContrasena'])?$_REQUEST['txtContrasena']:null);
+$txtContrasena2 	= (isset($_REQUEST['txtContrasena2'])?$_REQUEST['txtContrasena2']:null);
 $accion   	= (isset($_REQUEST['accion'])?$_REQUEST['accion']:'insert'); 
 //CUANDO INICIE SESION YA NO PODRA TENER HABILITADO EL REGISTRARSE
 if (isset($_REQUEST['btnIngresar']))
@@ -55,7 +56,9 @@ if (isset($_REQUEST['btnIngresar']))
 
 if (isset($_REQUEST['btnRegistrarse']))
 {
-		print "INSERTAR";
+if($txtContrasena == $txtContrasena2)
+    {
+         print "INSERTAR";
 		$tabla		= "tblpersona";
 		$campos		= "nombre,telefono,direccion";
 		$valores	= "'$txtNombre','$txtTelefono','$txtDireccion'";
@@ -72,6 +75,9 @@ if (isset($_REQUEST['btnRegistrarse']))
               
               $_SESSION['persona'] = $txtNombre;
               header("location:../index.php");  
+    
+    }
+               
 }//Fin de boton registrar
 
 ?>

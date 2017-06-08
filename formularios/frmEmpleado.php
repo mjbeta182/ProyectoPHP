@@ -1,11 +1,24 @@
 <!DOCTYPE>
 <html lang="en">
 <?php
+session_start();
+if ((isset($_SESSION['usuario'])) && (isset($_SESSION['persona'])) && (isset($_SESSION['id'])))
+{
+  $idusuario = $_SESSION['id'];
+  $usuario = $_SESSION['persona'];
+  $dir = 'formularios/perfil.php';
+  print 'sesion exitosa';
+  print $usuario;
+}else{
+  print 'fail la sesion';
+  $usuario = 'Acceder Registrarse';
+  $dir = 'index.php';
+}
 include('../plantilla/plantillaMantenimiento.php');
 include('../procesos/empleado.php');
 $titulo = 'Empleado';
 $puntos = '../';
-$PantallaCliente = new PantallaMantenimiento($titulo,$puntos);
+$PantallaCliente = new PantallaMantenimiento($titulo,$puntos,$usuario,$dir);
 $PantallaCliente->header();
 $PantallaCliente->barraMenu();
 ?>

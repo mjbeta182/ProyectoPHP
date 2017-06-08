@@ -1,6 +1,5 @@
 <?php
 include('../clases/conexion.php');
-
 function mostrarDatos($bdConexion,$idusuario)
 {
         
