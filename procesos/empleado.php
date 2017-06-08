@@ -5,8 +5,9 @@ $txtNombre 	= (isset($_REQUEST['txtNombre'])?$_REQUEST['txtNombre']:null);
 $txtDireccion	= (isset($_REQUEST['txtDireccion'])?$_REQUEST['txtDireccion']:null);
 $txtTelefono	= (isset($_REQUEST['txtTelefono'])?$_REQUEST['txtTelefono']:null);
 $slcTipoUsuario = (isset($_REQUEST['slcTipoUsuario'])?$_REQUEST['slcTipoUsuario']:null);
-$txtEmail		= (isset($_REQUEST['txtEmail'])?$_REQUEST['txtEmail']:null);
+$txtEmail	= (isset($_REQUEST['txtEmail'])?$_REQUEST['txtEmail']:null);
 $txtContrasena 	= (isset($_REQUEST['txtContrasena'])?$_REQUEST['txtContrasena']:null);
+$Buscar         = (isset($_REQUEST['Buscar'])?$_REQUEST['Buscar']:null);
 $accion   	= (isset($_REQUEST['accion'])?$_REQUEST['accion']:'insert'); 
 
 if (isset($_REQUEST['btnGuardar']))
@@ -62,7 +63,7 @@ if (isset($_REQUEST['accion']) and $_REQUEST['accion']=='eliminar' and isset($_R
 }//Fin de Eliminar
 
 
-function mostrarDatos($bdConexion,$hCodigo,$txtNombre,$txtDireccion,$txtTelefono,$slcTipoUsuario,$txtEmail,$txtContrasena)
+function mostrarDatos($bdConexion,$hCodigo,$txtNombre,$txtDireccion,$txtTelefono,$slcTipoUsuario,$txtEmail,$txtContrasena,$Buscar)
 {
 	$sqlMostrar = "SELECT 
 						p.idPersona,
@@ -78,7 +79,17 @@ function mostrarDatos($bdConexion,$hCodigo,$txtNombre,$txtDireccion,$txtTelefono
 					INNER JOIN tblpersona p
 						ON u.idPersona = p.idPersona 
 					INNER JOIN tbltipousuario tu
-						ON u.idTipoUsuario = tu.idTipoUsuario";			
+						ON u.idTipoUsuario = tu.idTipoUsuario
+                                                WHERE 
+                                                p.idPersona LIKE '%".$Buscar."%' OR 
+						p.nombre LIKE '%".$Buscar."%' OR
+						p.telefono LIKE '%".$Buscar."%' OR
+						p.direccion LIKE '%".$Buscar."%' OR
+						u.email LIKE '%".$Buscar."%' OR
+						u.contrasena LIKE '%".$Buscar."%' OR
+						u.idUsuario LIKE '%".$Buscar."%' OR
+						tu.idTipoUsuario LIKE '%".$Buscar."%' OR
+						tu.nombreUsuario LIKE '%".$Buscar."%'";			
 	$rsMostrar = $bdConexion->ejecutarSql($sqlMostrar);
 
 	
