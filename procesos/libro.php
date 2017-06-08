@@ -1,7 +1,5 @@
 <?php
-if(!isset($_SESSION)){
-    session_start();
-}
+
 include('../clases/conexion.php');
 $hCodigo		= (isset($_REQUEST['hCodigo'])?$_REQUEST['hCodigo']:0);
 $txtTitulo		= (isset($_REQUEST['txtTitulo'])?$_REQUEST['txtTitulo']:null);

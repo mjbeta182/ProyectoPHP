@@ -14,6 +14,10 @@ if ((isset($_SESSION['persona'])) && (isset($_SESSION['id']))) {
 	$usuario = 'Acceder Registrarse';
 	$dir = '../formularios/frmAcceder.php';
 }
+if(isset($_REQUEST['idCat'])?$_REQUEST['idCat']:0){
+    $categoria = $_REQUEST['idCat'];
+    print 'CATEGORIA #: '.$categoria;
+}
 include('../plantilla/plantillaCliente.php');
 include('../procesos/catalogoLibros.php');
 $titulo = 'LIBRARY';
@@ -33,7 +37,7 @@ $PantallaCliente->slide();
 	</div>
 	<div class="row3">
 		<div class="col-md-12">
-			<?php catalogo($bdConexion); ?>
+			<?php catalogo($bdConexion,$categoria); ?>
 		</div>
 	</div>
 <?php

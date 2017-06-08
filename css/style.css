@@ -76,3 +76,18 @@ article:hover .overlay {
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+.agregar:link, .agregar:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+.agregar:hover, .agregar:active {
+    background-color: orange;
+} 
+    

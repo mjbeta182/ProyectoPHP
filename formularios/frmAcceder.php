@@ -85,6 +85,12 @@ $PantallaCliente->barraMenu();
               <input type="password" class="form-control" id="txtContrasena" name="txtContrasena" placeholder="Contraseña" value="<?=$txtContrasena?>">
             </div>
             <br>
+             <label class="sr-only" for="inputPassword">Confirme Contraseña</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+              <input type="password" class="form-control" id="txtContrasena2" name="txtContrasena2" placeholder="Confirmar Contraseña" value="<?=$txtContrasena2?>">
+            </div>
+            <br>
             <button type="submit" class="btn btn-warning" name="btnRegistrarse">Registrarse</button>
           </form>
         </div>

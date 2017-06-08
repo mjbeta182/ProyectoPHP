@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('../clases/conexion.php');
 $hCodigo	= (isset($_REQUEST['hCodigo'])?$_REQUEST['hCodigo']:null);
 $slcNacionalidad = (isset($_REQUEST['slcNacionalidad'])?$_REQUEST['slcNacionalidad']:null);
