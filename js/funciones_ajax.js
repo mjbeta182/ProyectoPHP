@@ -1,34 +1,3 @@
-// // JavaScript Document
-// 	function validar()
-// 	{
-// 		correlativo	=	$('#txtCorrelativo').val();
-// 		Fecha		=	$('#txtFecha').val();
-// 		cliente		=	$('#slcCliente').val();
-// 		vendedor	=	$('#slcVendedor').val();
-// 		producto	=	$('#slcProducto').val();
-// 		cantidad	=	$('#txtCantidad').val();
-// 		precio		=	$('#txtPrecio').val();
-		
-// 		var mensaje		=	'Favor de completar y/o corregir los siguiente campos:'+'\n\n';
-// 		var error		=	0;
-// 		if (correlativo == 0)	{  mensaje+= " - Correlativo de factura "+"\n"; error=1; }
-// 		if (Fecha 		== '')	{  mensaje+= " - Fecha "+"\n"; error=1; }
-// 		if (cliente 	== '0')	{  mensaje+= " - Cliente "+"\n"; error=1; }
-// 		if (vendedor 	== '0')	{  mensaje+= " - Vendedor "+"\n"; error=1; }
-// 		if (producto 	== '0')	{  mensaje+= " - Producto a ingresar "+"\n"; error=1; }
-// 		if (cantidad 	== '' || eval(cantidad) <= 0) {  mensaje+= " - Cantidad "+"\n"; error=1; }
-// 		if (precio 		== '' || eval(precio) <= 0)	{  mensaje+= " - Precio de producto "+"\n"; error=1; }
-
-// 		if (error==1)
-// 		{
-// 			alert(mensaje);
-// 			return false;
-// 		}else{
-// 				document.forms[0].action='';
-// 				return true;
-// 			}
-// 	}
-//************************************************************************************************
 /*Funcion usada para aceptar solo numeros*/
 function decimal(e)
 {
@@ -38,6 +7,26 @@ function decimal(e)
 
 	var keynum = e.which
 	if (keynum > 33 && (keynum < 48 || keynum > 57) && keynum!=46)
+	return false;
+}
+
+function validateDecimal(valor) {
+    var RE = /^d*(.d{1})?d{0,1}$/;
+    if (RE.test(valor)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+//************************************************************************************************
+function soloNumeros(e)
+{
+	if(window.event)
+		var keynum = e.keyCode
+	else if(e.which)
+
+	var keynum = e.which
+	if (keynum < 48 || keynum > 57)
 	return false;
 }
 //************************************************************************************************
@@ -79,20 +68,78 @@ function frmImprimir()
 //************************************************************************************************
 function LimpiarTipoUsuario()
 {
-   accion	=	$('#accion').val("insert");
-   codigo   =	$('#hCodigo').val(null);
-   tipo		=	$('#txtTipo').val(null);
+   accion	=   $('#accion').val("insert");
+   codigo       =   $('#hCodigo').val(null);
+   tipo		=   $('#txtTipo').val(null);
 
 }
 function LimpiarEmpleado()
 {
-   accion		=	$('#accion').val("insert");
+   accion	=	$('#accion').val("insert");
    codigo   	=	$('#hCodigo').val(null);
-   nombre		=	$('#txtNombre').val(null);
-   telefono		=	$('#txtTelefono').val(null);
+   nombre	=	$('#txtNombre').val(null);
+   telefono	=	$('#txtTelefono').val(null);
    direccion	=	$('#txtDireccion').val(null);
-   email		=	$('#txtEmail').val(null);
+   email	=	$('#txtEmail').val(null);
    contrasena	=	$('#txtContrasena').val(null);
+   
+}
+//***************************************************************************************************
+function LimpiarCategoria()
+{
+    
+   accion   =	$('#accion').val("insert");
+   codigo   =	$('#hCodigo').val(null);
+   categoria=	$('#txtCategoria').val(null);
+   
+}
+//***************************************************************************************************
+function LimpiarEditorial()
+{
+    
+   accion               =   $('#accion').val("insert");
+   codigo               =   $('#hCodigo').val(null);
+   txtNombreEditorial   =   $('#txtNombreEditorial').val(null);
+   txtDireccion         =   $('#txtDireccion').val(null);
+   txtTelefono          =   $('#txtTelefono').val(null);
+   txtEmail             =   $('#txtEmail').val(null);
+   
+}
+//***************************************************************************************************
+function LimpiarLibro()
+{
+    
+   accion           =   $('#accion').val("insert");
+   codigo               =   $('#hCodigo').val(null);
+   txtTitulo        =   $('#txtTitulo').val(null);
+   txtStock         =   $('#txtStock').val(null);
+   txtDescripcion   =   $('#txtDescripcion').val(null);
+   txtPalabras      =   $('#txtPalabras').val(null);
+   txtCosto         =   $('#txtCosto').val(null);
+   archivo          =   $('#archivo').val(null);
+   slcAutor         =   $('#slcAutor').val(null);
+   slcEditorial     =   $('#slcEditorial').val(null);
+   slcCategoria     =   $('#slcCategoria').val(null);
+   
+}
+//***************************************************************************************************
+function LimpiarNacionalidad()
+{
+    
+   accion           =   $('#accion').val("insert");
+   codigo           =   $('#hCodigo').val(null);
+   txtNacionalidad  =   $('#txtNacionalidad').val(null);
+   
+}
+//***************************************************************************************************
+function LimpiarAutor()
+{
+    
+   accion           =   $('#accion').val("insert");
+   codigo           =   $('#hCodigo').val(null);
+   slcNacionalidad  =   $('#slcNacionalidad').val(null);
+   txtNombre        =   $('#txtNombre').val(null);
+   
 }
 //***************************************************************************************************
 function frmImprimir()
@@ -100,3 +147,23 @@ function frmImprimir()
     var id	=	$('#hCodigo').val();
 	window.open('../reportes/rptEmpleados.php?hCodigo='+id,'Vista');
 }
+//***************************************************************************************************
+//function existeFecha (fecha) {
+//	  var fechaf = fecha.split("/");
+//	  var d = fechaf[0];
+//	  var m = fechaf[1];
+//	  var y = fechaf[2];
+//	  return m > 0 && m < 13 && y > 0 && y < 32768 && d > 0 && d <= (new Date(y, m, 0)).getDate();
+//
+//
+//function validarFechaMenorActual(date){
+//	var x=new Date();
+//	var fecha = date.split("/");
+//	x.setFullYear(fecha[2],fecha[1]-1,fecha[0]);
+//	var today = new Date();
+//
+//	if (x >= today)
+//	  return false;
+//	else
+//	  return true;
+//}

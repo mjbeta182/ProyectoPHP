@@ -13,11 +13,12 @@ class Conexion
 	public function __construct()
     {
 		$this->conexion = mysqli_connect(HOST, USER, PASS,DBNAME);
+                mysql_set_charset('utf8');
 		if (!$this->conexion) DIE("Lo sentimos, no se ha podido 
 					conectar con MySQL: " . mysqli_error());     
 		        return true;
 	}//Fin del constructor
-
+        
 	//CREANDO METODO PARA DESCONECTAR
 	public function desconectar()
     {

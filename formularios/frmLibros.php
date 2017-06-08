@@ -1,6 +1,6 @@
 <!DOCTYPE>
 <html lang="es">
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 session_start();
 if ((isset($_SESSION['usuario'])) && (isset($_SESSION['persona'])) && (isset($_SESSION['id'])))
@@ -89,7 +89,7 @@ $PantallaCliente->barraMenu();
             <label class="sr-only" for="user">Precio Costo</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-              <input type="text" class="form-control" id="txtCosto" name="txtCosto" placeholder="Precio" value="<?=$txtCosto?>" required="true">
+              <input type="text" class="form-control" id="txtCosto" name="txtCosto" placeholder="Precio" value="<?=$txtCosto?>" required="true" onclick="return validateDecimal(this)">
             </div>
             <br>
             <label class="sr-only" for="user">Categoria</label>
@@ -113,7 +113,7 @@ $PantallaCliente->barraMenu();
             </div>
             <br>
             <br>
-            <button type="submit" class="btn btn-warning" onclick='LimpiarEmpleado();'>Nuevo</button>
+            <button type="submit" class="btn btn-warning" onclick='LimpiarLibro();'>Nuevo</button>
             <button id="btnGuardar" name="btnGuardar" type="submit" class="btn btn-warning" onclick='return actualizarItem();'>Guardar</button>
             <input type="hidden" id="accion" name="accion" value="<?=$accion?>" >
             <button type="submit" class="btn btn-warning">Imprimir Reporte</button>

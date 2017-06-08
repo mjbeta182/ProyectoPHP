@@ -23,6 +23,7 @@ $PantallaCliente = new PantallaMantenimiento($titulo,$puntos,$usuario,$dir);
 $PantallaCliente->header();
 $PantallaCliente->barraMenu();
 ?>
+    
 <div class="container-fluid">
 	<div class="row3">
 		 <div class="col-md-4">
@@ -57,7 +58,7 @@ $PantallaCliente->barraMenu();
             <label class="sr-only" for="user">Telefono</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-              <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Telefono" value="<?=$txtTelefono?>" required="true">
+              <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" class="txtTelefono" placeholder="Telefono" value="<?=$txtTelefono?>" required="true" data-mask="(000)0000-0000" onkeypress="return soloNumeros(event)">
             </div>
             <br>
             <label class="sr-only" for="user">Email</label>
@@ -67,7 +68,7 @@ $PantallaCliente->barraMenu();
             </div>
             <br>
             <br>
-            <button type="submit" class="btn btn-warning" onclick='LimpiarTipoUsuario();'>Nuevo</button>
+            <button type="submit" class="btn btn-warning" onclick='LimpiarEditorial();'>Nuevo</button>
             <button id="btnGuardar" name="btnGuardar" type="submit" class="btn btn-warning" onclick='return actualizarItem();'>Guardar</button>
             <input type="hidden" id="accion" name="accion" value="<?=$accion?>" >
             <button type="submit" class="btn btn-warning">Imprimir Reporte</button>

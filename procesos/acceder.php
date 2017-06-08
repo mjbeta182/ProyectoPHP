@@ -15,7 +15,7 @@ $txtDireccion	= (isset($_REQUEST['txtDireccion'])?$_REQUEST['txtDireccion']:null
 $txtTelefono	= (isset($_REQUEST['txtTelefono'])?$_REQUEST['txtTelefono']:null);
 $txtCorreo 	= (isset($_REQUEST['txtCorreo'])?$_REQUEST['txtCorreo']:null);
 $txtContrasena 	= (isset($_REQUEST['txtContrasena'])?$_REQUEST['txtContrasena']:null);
-$txtContrasena2 	= (isset($_REQUEST['txtContrasena2'])?$_REQUEST['txtContrasena2']:null);
+$txtContrasena2 = (isset($_REQUEST['txtContrasena2'])?$_REQUEST['txtContrasena2']:null);
 $accion   	= (isset($_REQUEST['accion'])?$_REQUEST['accion']:'insert'); 
 //CUANDO INICIE SESION YA NO PODRA TENER HABILITADO EL REGISTRARSE
 if (isset($_REQUEST['btnIngresar']))
@@ -79,5 +79,6 @@ if($txtContrasena == $txtContrasena2)
     }
                
 }//Fin de boton registrar
+
 
 ?>
