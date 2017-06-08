@@ -1,5 +1,6 @@
 <!DOCTYPE>
 <html lang="es">
+    <meta charset="UTF-8">
 <?php
 session_start();
 if ((isset($_SESSION['usuario'])) && (isset($_SESSION['persona'])) && (isset($_SESSION['id'])))
@@ -18,7 +19,7 @@ include('../plantilla/plantillaMantenimiento.php');
 include('../procesos/editorial.php');
 $titulo = 'Editorial';
 $puntos = '../';
-$PantallaCliente = new PantallaMantenimiento($titulo,$puntos);
+$PantallaCliente = new PantallaMantenimiento($titulo,$puntos,$usuario,$dir);
 $PantallaCliente->header();
 $PantallaCliente->barraMenu();
 ?>

@@ -1,5 +1,6 @@
 <!DOCTYPE>
-<html lang="en">
+<html lang="es">
+    <meta charset="UTF-8">
 <?php
 session_start(); 
 if ((isset($_SESSION['persona'])) && (isset($_SESSION['id'])))
