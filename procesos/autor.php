@@ -16,13 +16,6 @@ if (isset($_REQUEST['btnGuardar']))
 		$valores	= "$slcNacionalidad,'$txtNombre'";
 		$bdConexion->insertarDB($tabla,$campos,$valores);
 		$hCodigo = $bdConexion->retornarId();
-			if($hCodigo>0)
-			{
-				$tabla		= "tblautor";
-				$campos		= "idAutor,slcNacionalidad,nombreAutor";
-				$valores	= "$hCodigo,$slcNacionalidad,'$txtNombre'";
-				$bdConexion->insertarDB($tabla,$campos,$valores);
-			}
 		}
 		if ( $_REQUEST['accion']== 'update')
 		{
@@ -40,11 +33,11 @@ if (isset($_REQUEST['accion']) and $_REQUEST['accion']=='editar')
 	$accion = 'update';
 }
 
-if (isset($_REQUEST['accion']) and $_REQUEST['accion']=='eliminar' and isset($_REQUEST['idUsuario']))
+if (isset($_REQUEST['accion']) and $_REQUEST['accion']=='eliminar')
 {
-		$delete = $_REQUEST['idAutor'];
+                print "ELIMINAR";
 		$tabla = "tblautor";
-		$condicion = "idAutor = $delete ";
+		$condicion = "idAutor =".$hCodigo;
 		$bdConexion->eliminarDB($tabla,$condicion);
                 
 }//Fin de Eliminar
@@ -72,7 +65,7 @@ function mostrarDatos($bdConexion,$hCodigo,$slcTipoUsuario,$txtNombre)
 
 
 				<td align='center'>
-					<a href='frmAutor.php?accion=editar&hCodigo=".$fila['idAutor']."&slcNacionalidad=".$fila['nombreNacionalidad']."&txtNombre=".$fila['txtNombre']."'>
+					<a href='frmAutor.php?accion=editar&hCodigo=".$fila['idAutor']."&slcNacionalidad=".$fila['nombreNacionalidad']."&txtNombre=".$fila['nombreAutor']."'>
 					<button type='submit' class='btn btn-warning  fa fa-edit'></button>
 					</a>
 
