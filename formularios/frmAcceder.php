@@ -71,7 +71,7 @@ $PantallaCliente->barraMenu();
             <label class="sr-only" for="user">Telefono</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-              <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Telefono"  value="<?=$txtTelefono?>" >
+              <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" value="<?=$txtTelefono?>" >
             </div>
             <br>
             <label class="sr-only" for="email">Email</label>

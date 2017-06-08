@@ -9,14 +9,15 @@ function decimal(e)
 	if (keynum > 33 && (keynum < 48 || keynum > 57) && keynum!=46)
 	return false;
 }
-
-function validateDecimal(valor) {
-    var RE = /^d*(.d{1})?d{0,1}$/;
-    if (RE.test(valor)) {
-        return true;
-    } else {
-        return false;
-    }
+//************************************************************************************************
+function soloLetras(e) {
+    
+    tecla = (document.all) ? e.keyCode : e.which;
+    if (tecla==8) return true;
+    patron =/[A-Za-zñÑ]/;
+    te = String.fromCharCode(tecla);
+    return patron.test(te);
+    
 }
 //************************************************************************************************
 function soloNumeros(e)
@@ -28,6 +29,12 @@ function soloNumeros(e)
 	var keynum = e.which
 	if (keynum < 48 || keynum > 57)
 	return false;
+}
+//************************************************************************************************
+function validarTel(e){
+  tecla = (document.all) ? e.keyCode : e.which;
+  tecla = String.fromCharCode(tecla)
+  return /^[0-9\-]+$/.test(tecla);
 }
 //************************************************************************************************
 function confirmar()

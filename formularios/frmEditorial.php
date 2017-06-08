@@ -48,7 +48,7 @@ $PantallaCliente->barraMenu();
             <label class="sr-only" for="user">Nombre Editorial</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" class="form-control" id="txtNombreEditorial" name="txtNombreEditorial" placeholder="Nombre Editorial" value="<?=$txtNombreEditorial?>" required="true">
+              <input type="text" class="form-control" id="txtNombreEditorial" name="txtNombreEditorial" placeholder="Nombre Editorial" value="<?=$txtNombreEditorial?>" required="true"">
             </div>
             <br>
             <label class="sr-only" for="user">Direccion</label>
@@ -60,7 +60,7 @@ $PantallaCliente->barraMenu();
             <label class="sr-only" for="user">Telefono</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-              <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" class="txtTelefono" placeholder="Telefono" value="<?=$txtTelefono?>" required="true" data-mask="(000)0000-0000" onkeypress="return soloNumeros(event)">
+              <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" value="<?=$txtTelefono?>" required="true">
             </div>
             <br>
             <label class="sr-only" for="user">Email</label>
