@@ -3,6 +3,7 @@ include('../clases/conexion.php');
 $hCodigo	= (isset($_REQUEST['hCodigo'])?$_REQUEST['hCodigo']:null);
 $slcNacionalidad = (isset($_REQUEST['slcNacionalidad'])?$_REQUEST['slcNacionalidad']:null);
 $txtNombre 	= (isset($_REQUEST['txtNombre'])?$_REQUEST['txtNombre']:null);
+$txtBuscar 	= (isset($_REQUEST['txtBuscar'])?$_REQUEST['txtBuscar']:null);
 $accion   	= (isset($_REQUEST['accion'])?$_REQUEST['accion']:'insert'); 
 
 if (isset($_REQUEST['btnGuardar']))
@@ -42,9 +43,17 @@ if (isset($_REQUEST['accion']) and $_REQUEST['accion']=='eliminar')
 }//Fin de Eliminar
 
 
-function mostrarDatos($bdConexion,$hCodigo,$slcTipoUsuario,$txtNombre)
+function mostrarDatos($bdConexion,$hCodigo,$slcTipoUsuario,$txtNombre,$txtBuscar)
 {
-	$sqlMostrar = "SELECT a.idAutor, n.nombreNacionalidad, a.nombreAutor FROM tblautor a INNER JOIN tblnacionalidad n on a.idNacionalidad = n.idNacionalidad";			
+	$sqlMostrar = "SELECT a.idAutor, n.nombreNacionalidad, 
+                a.nombreAutor FROM tblautor a 
+                INNER JOIN tblnacionalidad n 
+                on a.idNacionalidad = n.idNacionalidad
+                Where 
+                a.idAutor LIKE '%".$txtBuscar."%' OR 
+                n.nombreNacionalidad LIKE '%".$txtBuscar."%' OR 
+                a.nombreAutor LIKE '%".$txtBuscar."%'";
+        
 	$rsMostrar = $bdConexion->ejecutarSql($sqlMostrar);
 
 	

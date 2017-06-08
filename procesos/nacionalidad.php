@@ -2,7 +2,8 @@
 include('../clases/conexion.php');
 $hCodigo	= (isset($_REQUEST['hCodigo'])?$_REQUEST['hCodigo']:null);
 $txtNacionalidad= (isset($_REQUEST['txtNacionalidad'])?$_REQUEST['txtNacionalidad']:null);
-$accion   	= (isset($_REQUEST['accion'])?$_REQUEST['accion']:'insert'); 
+$accion   	= (isset($_REQUEST['accion'])?$_REQUEST['accion']:'insert');
+$txtBuscar 	= (isset($_REQUEST['txtBuscar'])?$_REQUEST['txtBuscar']:null);
 
 if (isset($_REQUEST['btnGuardar']))
 {
@@ -38,9 +39,14 @@ if (isset($_REQUEST['accion']) and $_REQUEST['accion']=='eliminar')
 	$bdConexion->eliminarDB($tabla,$condicion);
 }//Fin de Eliminar
 
-function mostrarDatos($bdConexion,$hCodigo,$txtTipo)
+function mostrarDatos($bdConexion,$hCodigo,$txtTipo,$txtBuscar)
 {
-	$sqlMostrar = "SELECT * FROM tblnacionalidad";
+	$sqlMostrar = "SELECT * FROM tblnacionalidad
+                        WHERE
+                        idNacionalidad LIKE '%".$txtBuscar."%' OR 
+                        nombreNacionalidad LIKE '%".$txtBuscar."%'
+                        ";
+                
 					
 	$rsMostrar = $bdConexion->ejecutarSql($sqlMostrar);
 	

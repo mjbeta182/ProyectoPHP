@@ -2,6 +2,7 @@
 include('../clases/conexion.php');
 $hCodigo	= (isset($_REQUEST['hCodigo'])?$_REQUEST['hCodigo']:null);
 $txtTipo	= (isset($_REQUEST['txtTipo'])?$_REQUEST['txtTipo']:null);
+$txtBuscar 	= (isset($_REQUEST['txtBuscar'])?$_REQUEST['txtBuscar']:null);
 $accion   	= (isset($_REQUEST['accion'])?$_REQUEST['accion']:'insert'); 
 
 if (isset($_REQUEST['btnGuardar']))
@@ -37,9 +38,12 @@ if (isset($_REQUEST['accion']) and $_REQUEST['accion']=='eliminar')
 	$bdConexion->eliminarDB($tabla,$condicion);
 }//Fin de Eliminar
 
-function mostrarDatos($bdConexion,$hCodigo,$txtTipo)
+function mostrarDatos($bdConexion,$hCodigo,$txtTipo,$txtBuscar)
 {
-	$sqlMostrar = "SELECT * FROM tbltipousuario";
+	$sqlMostrar = "SELECT * FROM tbltipousuario
+                       where 
+                       idTipoUsuario LIKE '%".$txtBuscar."%' OR 
+                       nombreUsuario LIKE '%".$txtBuscar."%'";
 					
 	$rsMostrar = $bdConexion->ejecutarSql($sqlMostrar);
 	

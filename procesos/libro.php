@@ -8,6 +8,7 @@ $txtDescripcion	= (isset($_REQUEST['txtDescripcion'])?$_REQUEST['txtDescripcion'
 $txtPalabras	= (isset($_REQUEST['txtPalabras'])?$_REQUEST['txtPalabras']:null);
 $txtCosto		= (isset($_REQUEST['txtCosto'])?$_REQUEST['txtCosto']:null);
 $archivo		= (isset($_REQUEST['archivo'])?$_REQUEST['archivo']:null);
+$txtBuscar 	= (isset($_REQUEST['txtBuscar'])?$_REQUEST['txtBuscar']:null);
 $slcAutor		= (isset($_REQUEST['slcAutor'])?$_REQUEST['slcAutor']:null);
 $slcEditorial	= (isset($_REQUEST['slcEditorial'])?$_REQUEST['slcEditorial']:null);
 $slcCategoria	= (isset($_REQUEST['slcCategoria'])?$_REQUEST['slcCategoria']:null);
@@ -85,7 +86,7 @@ if (isset($_REQUEST['accion']) and $_REQUEST['accion']=='remove')
 		$bdConexion->eliminarDB($tabla,$condicion);
 		unset($_REQUEST['accion']);
 }
-function mostrarDatos($bdConexion,$hCodigo,$txtTitulo ,$txtStock,$txtDescripcion,$txtPalabras,$archivo,$slcEditorial,$slcCategoria,$slcAutor)
+function mostrarDatos($bdConexion,$hCodigo,$txtTitulo ,$txtStock,$txtDescripcion,$txtPalabras,$archivo,$slcEditorial,$slcCategoria,$slcAutor,$txtBuscar)
 {
 	$sqlMostrar = "SELECT 
 						l.idLibro,
@@ -104,6 +105,18 @@ function mostrarDatos($bdConexion,$hCodigo,$txtTitulo ,$txtStock,$txtDescripcion
 						ON l.idEditorial= e.idEditorial 
 					INNER JOIN tblcategoria c
 						ON l.idCategoria = c.idCategoria
+                                                WHERE
+                                                l.idLibro  LIKE '%".$txtBuscar."%' OR 
+						l.titulo LIKE '%".$txtBuscar."%' OR 
+						l.stock LIKE '%".$txtBuscar."%' OR 
+						l.descripcion LIKE '%".$txtBuscar."%' OR 
+						l.precioCosto LIKE '%".$txtBuscar."%' OR 
+						l.palabrasClave LIKE '%".$txtBuscar."%' OR 
+						l.imagen LIKE '%".$txtBuscar."%' OR 
+						e.idEditorial LIKE '%".$txtBuscar."%' OR 
+						e.nombreEditorial LIKE '%".$txtBuscar."%' OR 
+						c.idCategoria LIKE '%".$txtBuscar."%' OR 
+						c.nombreCategoria LIKE '%".$txtBuscar."%'
 					";			
 	
 	$rsMostrar= $bdConexion->ejecutarSql($sqlMostrar);

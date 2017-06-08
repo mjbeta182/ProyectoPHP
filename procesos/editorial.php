@@ -6,6 +6,7 @@ $txtNombreEditorial	= (isset($_REQUEST['txtNombreEditorial'])?$_REQUEST['txtNomb
 $txtDireccion           = (isset($_REQUEST['txtDireccion'])?$_REQUEST['txtDireccion']:null);
 $txtTelefono            = (isset($_REQUEST['txtTelefono'])?$_REQUEST['txtTelefono']:null);
 $txtEmail               = (isset($_REQUEST['txtEmail'])?$_REQUEST['txtEmail']:null);
+$txtBuscar               = (isset($_REQUEST['txtBuscar'])?$_REQUEST['txtBuscar']:null);
 $accion                 = (isset($_REQUEST['accion'])?$_REQUEST['accion']:'insert');
 
 //Boton Guardar
@@ -44,9 +45,15 @@ if (isset($_REQUEST['btnGuardar']))
     }//Fin de Eliminar
     
     //Mostrar Datos
-    function mostrarDatos($bdConexion,$hCodigo,$txtNombreEditorial,$txtDireccion,$txtTelefono,$txtEmail)
+    function mostrarDatos($bdConexion,$hCodigo,$txtNombreEditorial,$txtDireccion,$txtTelefono,$txtEmail,$txtBuscar)
     {
-	$sqlMostrar = "SELECT * FROM tbleditorial";
+	$sqlMostrar = "SELECT * FROM tbleditorial
+                       WHERE 
+                       idEditorial LIKE '%".$txtBuscar."%' OR
+                       nombreEditorial LIKE '%".$txtBuscar."%' OR
+                       direccion LIKE '%".$txtBuscar."%' OR
+                       telefono LIKE '%".$txtBuscar."%' OR
+                       email LIKE '%".$txtBuscar."%'";
 					
 	$rsMostrar = $bdConexion->ejecutarSql($sqlMostrar);
 	

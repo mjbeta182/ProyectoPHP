@@ -1,6 +1,7 @@
 <?php
 include('../clases/conexion.php');
 $hCodigo	= (isset($_REQUEST['hCodigo'])?$_REQUEST['hCodigo']:null);
+$txtBuscar	= (isset($_REQUEST['txtBuscar'])?$_REQUEST['txtBuscar']:null);
 $txtCategoria	= (isset($_REQUEST['txtCategoria'])?$_REQUEST['txtCategoria']:null);
 $accion   	= (isset($_REQUEST['accion'])?$_REQUEST['accion']:'insert'); 
 
@@ -38,9 +39,12 @@ if (isset($_REQUEST['accion']) and $_REQUEST['accion']=='eliminar')
 	$bdConexion->eliminarDB($tabla,$condicion);
 }//Fin de Eliminar
 
-function mostrarDatos($bdConexion,$hCodigo,$txtTipo)
+function mostrarDatos($bdConexion,$hCodigo,$txtTipo, $txtBuscar)
 {
-	$sqlMostrar = "SELECT * FROM tblcategoria";
+	$sqlMostrar = "SELECT * FROM tblcategoria 
+                       WHERE
+                       idCategoria LIKE '%".$txtBuscar."%' OR
+                       nombreCategoria LIKE '%".$txtBuscar."%'";
 					
 	$rsMostrar = $bdConexion->ejecutarSql($sqlMostrar);
 	
