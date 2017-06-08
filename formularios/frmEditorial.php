@@ -36,19 +36,19 @@ $PantallaCliente->barraMenu();
             <br>
             <label class="sr-only" for="user">Direccion</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
               <input type="text" class="form-control" id="txtDireccion" name="txtDireccion" placeholder="Direccion" value="<?=$txtDireccion?>" required="true">
             </div>
             <br>
             <label class="sr-only" for="user">Telefono</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-phone"></i></span>
               <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Telefono" value="<?=$txtTelefono?>" required="true">
             </div>
             <br>
             <label class="sr-only" for="user">Email</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
               <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Correo Electronico" value="<?=$txtEmail?>" required="true">
             </div>
             <br>

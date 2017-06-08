@@ -31,7 +31,7 @@ $PantallaCliente->barraMenu();
             <br>
             <label class="sr-only" for="user">Nacionalidad</label>
             <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
               <input type="text" class="form-control" id="txtNacionalidad" name="txtNacionalidad" placeholder="Nacionalidad" value="<?=$txtNacionalidad?>" required="true">
             </div>
             <br>
